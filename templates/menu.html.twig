@@ -1,0 +1,114 @@
+  {% if app.user %}
+   <div class="MenuIni">
+ {#
+ <img class="fotoMargarita" width="100x" src="/images/margaliz.png"> #}
+         <h6 class="Negro">Welcome to <b>  Physio-session </b> {{ app.user.username }}</h6>
+     
+
+          <h6><a class="logout" href="{{ path('app_logout') }}"> &#x2bbf;Logout</a> </h6>
+      <!--Menú sin iconos -->
+     {# <p title="This is a tooltip.">Hover over me to see the tooltip!</p> #}
+
+ <fieldset class="fieldset1 border p-2">
+     <img title="Sesión"class="fotoMenu" width="33px" src="/images/care.png"><p> Session</p>
+      <a title="Alta sesión" class="Blanco btnfalse"  href="{{ path('app_session_new') }}"> <img title="Sesión"class="fotoMenu" width="33px" src="/images/mano.png">  Alta</a>
+      <a  title="Listado"  class="Blanco btnfalse" href="{{ path('app_session_index') }}"> <img title="Sesión"class="fotoMenu" width="33px" src="/images/agenda1.png">Listado </a> 
+ </fieldset>
+
+ <fieldset class="fieldset1 border p-2">
+    <img title="Sesión"class="fotoMenu"width="33px"src="/images/armonia.png"><p> Paciente</p>
+     <a title="Alta Paciente" class="Blanco btnfalse"  href="{{ path('app_paciente_new') }}"> <img title="Sesión"class="fotoMenu" width="33px" src="/images/familia.png">  Alta</a>
+     <a  title="Listado Pacientes"  class="Blanco btnfalse" href="{{ path('app_paciente_index') }}"> <img title="Sesión"class="fotoMenu" width="33px" src="/images/agenda2.png">Listado </a> 
+ </fieldset>
+
+ <fieldset class="fieldset1 border p-2">
+    <img title="Tratamientos" class="fotoMenu" width="45px" src="/images/lampara-de-infrarrojos1.png"><p> Tratamientos</p>
+    <a class="Blanco btnfalse" href="{{ path('app_tratamientos_new') }}"><img title="Nuevo tratamiento" class="fotoMenu" width="33px" src="/images/corazon1.png">  Nuevo</a>
+    <a class="Blanco btnfalse" href="{{ path('app_tratamientos_index') }}"> <img title="Ver listado de tratamientos" class="fotoMenu" width="33px" src="/images/agenda1.png">  Listar</a>
+
+ </fieldset>
+
+ <fieldset class="fieldset1 border p-2">
+    <img title="Ver listado de tratamientos" class="fotoMenu" width="33px" src="/images/busqueda.png">
+    <p> Buscador </p>
+    <a class="Blanco btnfalse2" href="{{ path('app_session_findgen') }}">   Búsqueda</a>
+{#<a class="Blanco btnfalse2" href="{{ path('app_session_findgen') }}"><img title="Sesión" class="fotoMenu" width="33px" src="/images/busqueda.png"> Busca </a>#}
+</fieldset>
+
+    <!--
+
+      versión menos nueva
+
+
+
+    ---versión vieja
+          <h6><a class="Blanco btnfalse" href="#">Edición de Tratamientos 2 </a>
+          
+          <h6><a  class=" Blanco  btnfalse" href="#">Añadir patología detectada </a> </h6>  
+          <h6><a  class=" Blanco btnfalse" href="#">Crear Factura </a> </h6> 
+          <h6><a  class=" Blanco btnfalse" href="#">Editar factura</a> </h6> 
+
+
+      <!--Menú con iconos 
+          <a  class=" btnfalse " href="{{ path('app_session_new') }}"> <img class="fotoMenu" width="25px" src="/images/care.png"><h6>  Nueva sesión  </h6></a>   
+         
+          <a class="Negro btnfalse verdeCporp" href="{{ path('app_session_index') }}"><img class="fotoMenu" width="25px" src="/images/salud-mental.png"><h6>Listado sesiones</h6> </a>
+          <a  class="Negro btnfalse verdeCporp" href="{{ path('app_paciente_new') }}"><img class="fotoMenu" width="25px" src="/images/fisioterapia.png"><h6>Alta paciente  </h6> </a>
+           {#<a  class="Negro btnfalse verdeCporp" href="{{ path('app_paciente_index') }} "><img class="fotoMenu" width="25px" src="/images/masaje2.png"><h6>Edición pacientes  </h6> </a>  #}
+          <a  class="Negro btnfalse verdeCporp" href="{{ path('app_paciente_index') }}"><img class="fotoMenu" width="25px" src="/images/agenda1.png"><h6>Listado pacientes  </h6> </a>
+          <a class="Negro btnfalse verdeCporp" href="{{ path('app_tratamiento1_new') }}"><img class="fotoMenu" width="25px" src="/images/corazon1.png"><h6>Alta ttos. 1   </h6>   </a>
+          <a class="Negro btnfalse verdeCporp" href="{{ path('app_tratamiento1_index') }}"><img class="fotoMenu" width="25px" src="/images/mano.png"><h6>Listado ttos. 1  </h6>  </a> 
+         
+          <a class=" btnfalse oscuro" href="{{ path('app_session_findgen') }}"><img class="fotoMenu" width="25px" src="/images/busqueda-de-conocimiento de freepik.png"><h6>Buscador</h6>  </a> 
+       
+          <h6><a class="Blanco btnfalse" href="#">Alta Tratamientos 2 </a>
+          <h6><a class="Blanco btnfalse" href="#">Edición de Tratamientos 2 </a>
+          
+          <h6><a  class=" Blanco  btnfalse" href="#">Añadir patología detectada </a> </h6>  
+          <h6><a  class=" Blanco btnfalse" href="#">Crear Factura </a> </h6> 
+          <h6><a  class=" Blanco btnfalse" href="#">Editar factura</a> </h6> 
+
+          -->
+     
+   </div>
+   
+
+ {% else %}
+    <div class="MenuIni">
+      
+      <fieldset class="fieldset1 border p-2">
+       
+      {# <a class="Negro  btnfalse" href="{{ path('app_cliente_index') }}"> Área clientes</a> #}
+
+<a href="{{ path('app_cliente_index') }}">
+  <button class="bn54">
+    <span class="bn54span">Área clientes</span>
+  </button>
+</a>
+
+
+
+<a href="{{ path('app_factura_index') }}">
+  <button class="bn54">
+    <span class="bn54span"> Emitir Facturas</span>
+  </button>
+</a>
+
+
+
+<a href="{{ path('app_proveedor_index') }}">
+  <button class="bn54">
+    <span class="bn54span">Proveedores</span>
+  </button>
+</a>
+
+
+
+
+
+
+
+  
+ </div>
+ 
+     {% endif %}

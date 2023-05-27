@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proveedor index{% endblock %}
+
+{% block body %}
+    <h1>Listado de proveedores</h1>
+    <br/>
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+            
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proveedor in proveedors %}
+            <tr>
+                
+                <td>{{ proveedor.name }}</td>
+                <td>
+                    <a class="bn54" href="{{ path('app_proveedor_show', {'id': proveedor.id}) }}">Ver</a>
+                    <a class="bn54" href="{{ path('app_proveedor_edit', {'id': proveedor.id}) }}">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br/>
+    <a href="{{ path('app_proveedor_new') }}" class="btn btn-primary" >Crear nuevo proveedor</a>
+{% endblock %}
